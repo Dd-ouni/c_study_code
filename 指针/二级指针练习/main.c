@@ -45,7 +45,7 @@ void test02()
     size_t len = sizeof(pIntArray) / sizeof(int *);
     printf("len = %d \n", (int)len);
 
-    int intArray[5] = { 10, 20, 30, 40, 50 };
+    int intArray[5] = {10, 20, 30, 40, 50};
 
     for (size_t i = 0; i < len; i++)
     {
@@ -54,29 +54,32 @@ void test02()
     }
 
     printfPInt(pIntArray, len);
-    
+
     for (size_t i = 0; i < len; i++)
     {
-        if(pIntArray[i] != NULL) {
-            printf("pIntArray[%d] = %p \n", (int) i, pIntArray[i]);
+        if (pIntArray[i] != NULL)
+        {
+            printf("pIntArray[%d] = %p \n", (int)i, pIntArray[i]);
             free(pIntArray[i]);
             pIntArray[i] = NULL;
         }
     }
 }
 
-void callocPint(int** pInt, size_t len) {
-    pInt = calloc(len, sizeof(int*));
-    // for (size_t i = 0; i < len; i++)
-    // {
-    //     pInt[i] = calloc(1, sizeof(int));
-    //     *pInt[i] = (int)(i * 100);
-    // }
+void callocPint(int **pInt, size_t len)
+{
+    pInt = calloc(len, sizeof(int *));
+    for (size_t i = 0; i < len; i++)
+    {
+        pInt[i] = calloc(1, sizeof(int));
+        *pInt[i] = (int)(i * 100);
+    }
 }
 
-void test03() {
+void test03()
+{
     // 二级指针堆 输出练习
-    int** pIntArray = NULL;
+    int **pIntArray = NULL;
     size_t len = 5;
     callocPint(pIntArray, len);
 
@@ -84,7 +87,7 @@ void test03() {
     {
         printf("*pIntArray[%d] = %d \n", (int)i, *pIntArray[i]);
     }
-    
+
     // for (size_t i = 0; i < len; i++)
     // {
     //     if(pIntArray[i] != NULL) {
@@ -93,11 +96,11 @@ void test03() {
     //     }
     // }
 
-    if(pIntArray != NULL) {
+    if (pIntArray != NULL)
+    {
         free(pIntArray);
         pIntArray = NULL;
     }
-    
 }
 
 int main()
