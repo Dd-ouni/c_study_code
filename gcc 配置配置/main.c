@@ -24,6 +24,6 @@ int main(int argc, char const *argv[])
         size_t到int的隐式转换会有警告  防止内存截断
     */
 
-   // -W -Wall -Werror -Wextra -pedantic -ansi -Wconversion -std=c11 -fsanitize=address
+    // -W -Wall -Werror -Wextra -pedantic -ansi -Wconversion -std=c11 -fsanitize=address
     return 0;
 }
