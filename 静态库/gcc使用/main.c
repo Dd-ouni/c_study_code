@@ -1,3 +1,4 @@
+#pragma comment(lib, "./libtest.lib")
 #include <stdio.h>
 #include "StaticLib1.h"
 
