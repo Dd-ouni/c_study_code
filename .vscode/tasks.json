@@ -9,7 +9,15 @@
 				"-g",
 				"${file}",
 				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}"
+				"${fileDirname}/${fileBasenameNoExtension}",
+				"-W",
+				"-Wall",
+				"-Werror",
+				"-Wextra",
+				"-pedantic",
+				"-ansi",
+				"-Wconversion",
+				"-std=c++11"
 			],
 			"options": {
 				"cwd": "/usr/bin"
