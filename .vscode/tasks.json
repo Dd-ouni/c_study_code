@@ -3,24 +3,25 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "C/C++: g++ build active file",
-			"command": "/usr/bin/g++",
+			"label": "C/C++: g++.exe build active file",
+			"command": "C:\\Strawberry\\c\\bin\\g++.exe",
 			"args": [
 				"-g",
 				"${file}",
 				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
 				"-W",
-				"-Wall",
-				"-Werror",
-				"-Wextra",
-				"-pedantic",
-				"-ansi",
-				"-Wconversion",
-				"-std=c++11"
+        "-Wall",
+        "-Werror",
+        "-Wextra",
+        "-pedantic",
+        "-ansi",
+        "-Wconversion",
+        "-std=c++14",
+        "-fexec-charset=GBK"
 			],
 			"options": {
-				"cwd": "/usr/bin"
+				"cwd": "C:\\Strawberry\\c\\bin"
 			},
 			"problemMatcher": [
 				"$gcc"
@@ -29,7 +30,7 @@
 				"kind": "build",
 				"isDefault": true
 			},
-			"detail": "compiler: /usr/bin/g++"
+			"detail": "compiler: C:\\Strawberry\\c\\bin\\g++.exe"
 		}
 	]
 }
