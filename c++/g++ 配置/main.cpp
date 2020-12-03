@@ -12,8 +12,9 @@ int main(void)
         "-pedantic",
         "-ansi",
         "-Wconversion",
-        "-std=c++14",
+        "-std=c++17",
         "-fexec-charset=GBK"
+        // window GBK ubuntu UTF-8
     */
     printf("hello world! \n");
     return 0;
