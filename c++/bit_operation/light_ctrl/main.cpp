@@ -50,31 +50,56 @@ public:
     void billiardsLightHandle(int pos)
     {
 
-        if (pos <= 8 || pos >= 0)
-        {
-            int section = 24;
+        if (pos <= 8 && pos >= 1)
+        {   
+            // 操作位置
+            int handle_pos = (pos + 24 - 1);
+
+            // 获取操作位置的状态
             LightType light = 1;
-            light <<= pos + section;
+            light <<= handle_pos;
             light &= this->m_light;
-            bool ret = light % 2;
+            bool isOpen = (bool) (light >>= handle_pos);
+            
+            // 置位
             light = 1;
-            light <<= pos + section;
-            cout << bitset<32>(light) << endl;
-            if (ret)
-            {
-            }
+            light <<= handle_pos;
+            
+            // 开关
+            if (isOpen)
+            {   
+                cout << "关闭台球区：" << pos; 
+                this->m_light &= (~light);
+            }   
             else
             {
+                cout << "打开台球区：" << pos; 
+                this->m_light |= light;
             }
+            
+            light = this->m_light;
+            light >>= 24;
+            // 显示台球区
+            cout << " " << bitset<8>(light) << endl;
         }
-        else
+        else if(pos == 0)
         {
-            cout << "无效操作" << endl;
+            LightType light = this->m_billiards_room;
+            this->m_light &= (~light);
+            light = this->m_light;
+            light >>= 24;
+            cout << "关闭台球区全部：" << bitset<8>(light) << endl;
+        }else if(pos == -1) {
+            LightType light = this->m_billiards_room;
+            this->m_light |= light;
+            light = this->m_light;
+            light >>= 24;
+            cout << "打开台球区全部：" << bitset<8>(light) << endl;
         }
     }
     void showAllLight()
     {
-        cout << bitset<32>(this->m_light) << endl;
+        cout << "m_light " << bitset<32>(this->m_light) << endl;
     }
 
 private:
@@ -89,11 +114,16 @@ void test01()
 {
     LightCtrl boboLightCtrl;
     boboLightCtrl.billiardsLightHandle(6);
-};
+    boboLightCtrl.billiardsLightHandle(2);
+    boboLightCtrl.billiardsLightHandle(2);
+    boboLightCtrl.billiardsLightHandle(-1);
+    boboLightCtrl.billiardsLightHandle();
+    boboLightCtrl.billiardsLightHandle(0);
+}
 
 int main()
 {
-    system("clear");
+    system("cls");
     test01();
     return 0;
 }
