@@ -4,33 +4,30 @@
 		{
 			"type": "cppbuild",
 			"label": "C/C++: g++.exe build active file",
-			"command": "C:\\Strawberry\\c\\bin\\g++.exe",
+			"command": "E:\\software\\Qt5.14.2\\Tools\\mingw730_64\\bin\\g++.exe",
 			"args": [
 				"-g",
 				"${file}",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe",
 				"-W",
-        "-Wall",
-        "-Werror",
-        "-Wextra",
-        "-pedantic",
-        "-ansi",
-        "-Wconversion",
-        "-std=c++14",
-        "-fexec-charset=GBK"
+				"-Wall",
+				"-Werror",
+				"-Wextra",
+				"-pedantic",
+				"-ansi",
+				"-Wconversion",
+				"-std=c++17",
+				"-fexec-charset=GBK"
 			],
 			"options": {
-				"cwd": "C:\\Strawberry\\c\\bin"
+				"cwd": "E:\\software\\Qt5.14.2\\Tools\\mingw730_64\\bin"
 			},
 			"problemMatcher": [
 				"$gcc"
 			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"detail": "compiler: C:\\Strawberry\\c\\bin\\g++.exe"
+			"group": "build",
+			"detail": "compiler: E:\\software\\Qt5.14.2\\Tools\\mingw730_64\\bin\\g++.exe"
 		}
 	]
 }
