@@ -7,6 +7,13 @@ IncTmpType inc(IncTmpType a, IncTmpType b) {
     return a + b;
 }
 
+// 函数模板例外，用来处理指针
+template <>
+int* inc(int* a, int* b) {
+        cout << typeid(a).name() << endl;
+    return *a > *b? a : b;
+}
+
 int inc(int a, int b){
     cout << "int 类型" << endl;
     return a + b;

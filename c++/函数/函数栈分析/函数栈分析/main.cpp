@@ -16,6 +16,7 @@ int Add(int a, int b) {
 int main() {
 
 	int x = Add(250, 50);
+	std::cout << x << std::endl;
 	return 0;
 }
 
