@@ -18,6 +18,7 @@ using std::endl;
 
 int main(int argc, char const *argv[])
 {
+    
     // 旧的标输入输出
     char text[64] = {0};
     printf("pls ipt text:\n");
