@@ -12,6 +12,7 @@ int GetAge() {
 	std::cout << "Please input student age：";
 	std::cin >> rt;
 	return rt;
+	
 }
 
 int count() {
