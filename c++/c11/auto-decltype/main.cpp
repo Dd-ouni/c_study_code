@@ -16,6 +16,8 @@ auto add(int& a, int& b)-> decltype(a > b?a:b){
     return a > b?a:b;
 }
 
+
+
 void test01() {
     // 1. auto 的缺陷, 丢失修饰符
     const int b{100};

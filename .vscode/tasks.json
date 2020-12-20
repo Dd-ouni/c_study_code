@@ -4,7 +4,7 @@
 		{
 			"type": "cppbuild",
 			"label": "C/C++: g++.exe build active file",
-			"command": "E:\\sw\\MinGW\\bin\\g++.exe",
+			"command": "E:\\software\\Qt5.14.2\\Tools\\mingw730_64\\bin\\g++.exe",
 			"args": [
 				"-g",
 				"${file}",
@@ -37,13 +37,13 @@
 				"-fexec-charset=GBK"
 			],
 			"options": {
-				"cwd": "E:\\sw\\MinGW\\bin"
+				"cwd": "E:\\software\\Qt5.14.2\\Tools\\mingw730_64\\bin"
 			},
 			"problemMatcher": [
 				"$gcc"
 			],
 			"group": "build",
-			"detail": "compiler: E:\\sw\\MinGW\\bin\\g++.exe"
+			"detail": "compiler: E:\\software\\Qt5.14.2\\Tools\\mingw730_64\\bin\\g++.exe"
 		}
 	]
 }
