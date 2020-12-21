@@ -59,6 +59,8 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "bitset": "cpp",
-        "strstream": "cpp"
+        "strstream": "cpp",
+        "ctime": "cpp",
+        "iomanip": "cpp"
     }
 }
