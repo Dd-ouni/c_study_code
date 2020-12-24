@@ -1,15 +1,13 @@
 #include <iostream>
 using namespace std;
-// 成员方法静态多态
-// 成员方法动态多态
-using callFunc = void (*)();
 
+// 成员方法静态多态
+using callFunc = void (*)();
 
 class F{
     public:
         void show();
 };
-
 
 class S: public F{
     public:
