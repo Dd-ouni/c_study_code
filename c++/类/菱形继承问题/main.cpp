@@ -1,7 +1,3 @@
-// 1. 菱形继承 动物 -> 人类、狼 -> 狼人
-// 2. 虚基类解决成员变量重叠问题（虚基类声明继承类只实例化一次）
-// 3. 内存层面上的 菱形继承 和 虚基类
-// 4. 万物皆对象 设计类  动物 静物
 #include <iostream>
 using namespace std;
 
@@ -14,7 +10,7 @@ class GameObject{
         }
 };
 // class Person: public GameObject{
-class Person: virtual GameObject{
+class Person: public virtual GameObject{
     public:
         unsigned pa{10};
         unsigned pb{20};
@@ -24,7 +20,7 @@ class Person: virtual GameObject{
 };
 
 // class Wolf: public GameObject{
-class Wolf: virtual GameObject{
+class Wolf: public virtual GameObject{
     public:
         unsigned wa{500};
         unsigned wb{1000};
@@ -42,6 +38,26 @@ class WolfPerson: public Person, public Wolf{
             cout << "WolfPerson 构造函数" << endl;
         }
 };
+
+/*
+    1. 菱形继承
+    菱形继承是（多继承）中的一种情况
+    动物 -> 人类、狼 -> 狼人
+    人类 和 狼 继承于 动物类，狼人 又继承于 人类 和 狼
+    
+    以上就是菱形继承的状况
+*/
+/*
+    2. 菱形继承的问题之重复父类成员属性 
+    人类 和 狼 继承于 动物类，狼人 又继承于 人类 和 狼
+    这一系列操作之后，人 和 狼 都拥有动物类的成员变量
+    狼人继承了 人 和 狼即可会拥有2份动物类的成员变量
+    导致二一性问题
+*/
+/*
+    3. 虚基类
+    通过给 人 和 狼 使用虚基类修饰继承的父类解决菱形继承问题
+*/
 
 
 void test01() {

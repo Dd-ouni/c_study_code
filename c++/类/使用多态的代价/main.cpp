@@ -5,6 +5,7 @@ class F{
 public:
     F() {
         cout << "F 构造函数" << endl;
+        cout << this << endl;
         this->test();
     }
     virtual F& show() {
@@ -14,7 +15,7 @@ public:
     void test() {
         this->show();
     }
-    virtual ~F() {
+    ~F() {
         cout << "F 析构函数" << endl;
         this->test();
     }
@@ -25,6 +26,7 @@ class S : public F{
 public:
     S() {
         cout << "S 构造函数" << endl;
+        cout << this << endl;
         this->test();
         F::show();
     }
@@ -50,9 +52,9 @@ void test01() {
     cout << "test" << endl;
     // S sa;
     // sa.test();
-    S* psa = new S;
-    psa->test();
-    delete psa;
+    F* pfa = new S;
+    pfa->test();
+    delete pfa;
 }
 
 int main()
