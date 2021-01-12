@@ -11,7 +11,7 @@ void test();
 
 int main()
 {
-    // system("chcp 65001");
+    system("chcp 65001");
 
     try
     {
@@ -47,19 +47,36 @@ void test()
 void replaceTransl(char *&fileBuff)
 {
 
-    smatch results;
     string str = fileBuff;
-    cout << str << endl;
+    regex reg("\\$t\\('(.*?)'\\)");
 
-    while (regex_search(str, results, regex("(t\\()(.*)(\\))")))
+    smatch m;
+    auto pos = str.cbegin();
+    auto end = str.cend();
+    for (; regex_search(pos, end, m, reg); pos = m.suffix().first)
     {
-        for (auto x : results)
-        {
-            cout << x << " ";
-        }
-        cout << endl;
-        str = results.suffix().str();
+        cout << "----------------" << endl;
+        cout << m.str() << endl;
+        cout << m.str(1) << endl;
+        // cout << m.str(2) << endl;
+        // cout << m.str(3) << endl;
     }
+
+    // regex reg("<(.*?)>(.*?)</(\\1)>");
+    // string content("123<xml>value</xml>456<xml>center</xml>hahaha<vertical>window</vertical>the end");
+    // regex reg("\\$t\\('(.*?)'\\)");
+    // string content("$t('请输入关键词搜索')$t('cccc')$t('aaaa')");
+    // smatch m;
+    // auto pos = content.cbegin();
+    // auto end = content.cend();
+    // for (; regex_search(pos, end, m, reg); pos = m.suffix().first)
+    // {
+    //     cout << "----------------" << endl;
+    //     cout << m.str() << endl;
+    //     cout << m.str(1) << endl;
+    //     // cout << m.str(2) << endl;
+    //     // cout << m.str(3) << endl;
+    // }
 }
 
 void readFile(char *&fileBuff)
